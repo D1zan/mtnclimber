@@ -1,0 +1,77 @@
+[gd_scene load_steps=11 format=3 uid="uid://n345ecbixdwe"]
+
+[ext_resource type="Texture2D" uid="uid://dldnk8tco743q" path="res://Assests/Enemy/Untitled__1_-removebg-preview.png" id="1_3euld"]
+[ext_resource type="Script" path="res://Scripts/enemy.gd" id="1_j8mcl"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26utl"]
+atlas = ExtResource("1_3euld")
+region = Rect2(0, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b661n"]
+atlas = ExtResource("1_3euld")
+region = Rect2(176, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u2yfe"]
+atlas = ExtResource("1_3euld")
+region = Rect2(352, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjknl"]
+atlas = ExtResource("1_3euld")
+region = Rect2(528, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ajtc3"]
+atlas = ExtResource("1_3euld")
+region = Rect2(0, 176, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y5f5n"]
+atlas = ExtResource("1_3euld")
+region = Rect2(176, 176, 176, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_brktn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_26utl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b661n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u2yfe")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gjknl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ajtc3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y5f5n")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mkgq"]
+size = Vector2(127, 80)
+
+[node name="Enemy" type="CharacterBody2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_j8mcl")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_brktn")
+frame_progress = 0.363826
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+
+[node name="bugDeath" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="bugDeath"]
+position = Vector2(1.5, 11)
+shape = SubResource("RectangleShape2D_6mkgq")
+
+[connection signal="area_entered" from="bugDeath" to="." method="_on_bug_death_area_entered"]
+[connection signal="body_entered" from="bugDeath" to="." method="_on_bug_death_body_entered"]

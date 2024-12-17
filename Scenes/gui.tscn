@@ -1,0 +1,73 @@
+[gd_scene load_steps=8 format=3 uid="uid://biu744c1amotx"]
+
+[ext_resource type="Texture2D" uid="uid://xq4xeoq1ljos" path="res://Assests/Other Assests/Coin-removebg-preview.png" id="1_gaxo1"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qnuns"]
+atlas = ExtResource("1_gaxo1")
+region = Rect2(0, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_367cf"]
+atlas = ExtResource("1_gaxo1")
+region = Rect2(176, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f6i3k"]
+atlas = ExtResource("1_gaxo1")
+region = Rect2(352, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ohhp1"]
+atlas = ExtResource("1_gaxo1")
+region = Rect2(528, 0, 176, 176)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pdkn5"]
+atlas = ExtResource("1_gaxo1")
+region = Rect2(0, 176, 176, 176)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nqqr2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qnuns")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_367cf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f6i3k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ohhp1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pdkn5")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="CoinValue" type="Label" parent="."]
+offset_left = 1011.0
+offset_top = -3.0
+offset_right = 1125.0
+offset_bottom = 52.0
+theme_override_font_sizes/font_size = 40
+text = "0"
+horizontal_alignment = 2
+
+[node name="ScoreValue" type="Label" parent="."]
+offset_left = 1008.0
+offset_top = 49.0
+offset_right = 1148.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 20
+text = "0"
+horizontal_alignment = 2
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(1132, 23)
+scale = Vector2(0.478693, 0.419034)
+sprite_frames = SubResource("SpriteFrames_nqqr2")
+autoplay = "default"
+frame_progress = 0.518359
