@@ -1,0 +1,57 @@
+[gd_scene load_steps=8 format=3 uid="uid://blwuda6d2cvw4"]
+
+[ext_resource type="Texture2D" uid="uid://r0fv7sdkxcgk" path="res://Assests/Other Assests/New Piskel.png" id="1_r6qtw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v0u3r"]
+atlas = ExtResource("1_r6qtw")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gqpf5"]
+atlas = ExtResource("1_r6qtw")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nj3l2"]
+atlas = ExtResource("1_r6qtw")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_urtdq"]
+atlas = ExtResource("1_r6qtw")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_evgpt"]
+atlas = ExtResource("1_r6qtw")
+region = Rect2(0, 64, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iwmh8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v0u3r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gqpf5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nj3l2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_urtdq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_evgpt")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Snow" type="CharacterBody2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 1, 1, 0.352941)
+z_index = -12
+position = Vector2(45.5, -26)
+scale = Vector2(30, 21.861)
+sprite_frames = SubResource("SpriteFrames_iwmh8")
+autoplay = "default"
+frame_progress = 0.332496
