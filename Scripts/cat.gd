@@ -68,7 +68,7 @@ func walk():
 		$AnimatedSprite2D.play("cat_idle")
 	
 func killPlayer():
-	position = %respawn.position
+	position = %respawn.position    
 	$AnimatedSprite2D.flip_h = true
 func killPlayerS2():
 	position = %RespawnS2.position
