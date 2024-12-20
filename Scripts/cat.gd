@@ -8,6 +8,7 @@ var jump_count = 0
 const friction = 70
 const wall_jump_pushback = 100
 var double_jump
+@export var fighting = false
 
 func _ready():
 	double_jump = false
@@ -29,8 +30,10 @@ func _physics_process(delta: float) -> void:
 	# Handle jump.
 	jump()
 	
+	fight()
 	# Get the input direction and handle the movement/deceleration.
 	walk()
+	
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
 	move_and_slide()
@@ -62,10 +65,11 @@ func walk():
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = true
 	
-	if velocity.x != 0:
-		$AnimatedSprite2D.play("cat_walk")
-	else:
-		$AnimatedSprite2D.play("cat_idle")
+	if not fighting:
+		if velocity.x != 0:
+			$AnimatedSprite2D.play("cat_walk")
+		else:
+			$AnimatedSprite2D.play("cat_idle")
 	
 func killPlayer():
 	position = %respawn.position
@@ -84,8 +88,16 @@ func _on_death_area_2_body_entered(body: Node2D) -> void:
 func _on_next_level_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 	
-func go_back_L_1():
-	position = %Welcome_back_L_1.position
-func go_bac_L_2():
-	position = %Welcome_back_L_2.position
+func fight():
+	if Input.is_action_just_pressed("Fight"):
+		fighting = true
+		$AnimatedSprite2D.play("cat_fight")
+		print("fight")
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	print("x")
+	fighting = false
+
+
+
 	
