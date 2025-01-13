@@ -1,8 +1,52 @@
-[gd_scene load_steps=18 format=3 uid="uid://eok7e2xeeon4"]
+[gd_scene load_steps=29 format=3 uid="uid://eok7e2xeeon4"]
 
 [ext_resource type="Script" path="res://Scripts/cat.gd" id="1_06t6j"]
 [ext_resource type="Texture2D" uid="uid://s1uxl2yurngt" path="res://Assests/Cat Sprite/Cat_sprite__3_-removebg-preview.png" id="1_8dye0"]
 [ext_resource type="Texture2D" uid="uid://bhwbq4usqwko2" path="res://Assests/Cat Sprite/Cat_sprite__2_-removebg-preview-removebg-preview.png" id="2_7qxuv"]
+[ext_resource type="Texture2D" uid="uid://cdrwu14otxxhl" path="res://Assests/Cat Sprite/cat_Fight-removebg-preview.png" id="2_dngls"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_82vep"]
+size = Vector2(101, 76)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4yyd"]
+atlas = ExtResource("2_dngls")
+region = Rect2(0, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_out0s"]
+atlas = ExtResource("2_dngls")
+region = Rect2(144, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f8f3d"]
+atlas = ExtResource("2_dngls")
+region = Rect2(288, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_28yng"]
+atlas = ExtResource("2_dngls")
+region = Rect2(432, 0, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_al1xa"]
+atlas = ExtResource("2_dngls")
+region = Rect2(0, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_06uyi"]
+atlas = ExtResource("2_dngls")
+region = Rect2(144, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uctqv"]
+atlas = ExtResource("2_dngls")
+region = Rect2(288, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_68655"]
+atlas = ExtResource("2_dngls")
+region = Rect2(432, 144, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dv2px"]
+atlas = ExtResource("2_dngls")
+region = Rect2(0, 288, 144, 144)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edluh"]
+atlas = ExtResource("2_dngls")
+region = Rect2(0, 0, 144, 144)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uxi66"]
 atlas = ExtResource("1_8dye0")
@@ -56,6 +100,41 @@ region = Rect2(352, 176, 176, 176)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_e4yyd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_out0s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f8f3d")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_28yng")
+}, {
+"duration": 3.5,
+"texture": SubResource("AtlasTexture_al1xa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_06uyi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_uctqv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_68655")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dv2px")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_edluh")
+}],
+"loop": false,
+"name": &"cat_fight",
+"speed": 20.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_uxi66")
 }, {
 "duration": 1.0,
@@ -101,24 +180,26 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j0shw"]
-size = Vector2(90, 77)
-
 [node name="Cat" type="CharacterBody2D" groups=["Cat", "cat"]]
-collision_layer = 3
-collision_mask = 3
+collision_layer = 15
+collision_mask = 15
 script = ExtResource("1_06t6j")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-sprite_frames = SubResource("SpriteFrames_6g77l")
-animation = &"cat_walk"
-autoplay = "cat_idle"
-frame = 1
-frame_progress = 0.450921
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12.5)
-shape = SubResource("RectangleShape2D_j0shw")
+position = Vector2(8.5, -28)
+shape = SubResource("RectangleShape2D_82vep")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(9, -18.7727)
+scale = Vector2(1, 0.921)
+sprite_frames = SubResource("SpriteFrames_6g77l")
+animation = &"cat_fight"
+autoplay = "cat_idle"
+frame = 9
+frame_progress = 1.0
+flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(18, -54)
+position = Vector2(22, -125)
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
