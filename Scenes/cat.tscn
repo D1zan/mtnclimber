@@ -197,6 +197,7 @@ animation = &"cat_fight"
 autoplay = "cat_idle"
 frame = 9
 frame_progress = 1.0
+flip_h = true
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(22, -125)
