@@ -2167,7 +2167,7 @@ length = 171.0
 
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_qx3fk")
-metadata/_edit_vertical_guides_ = [13152.0, 13151.0]
+metadata/_edit_vertical_guides_ = [13152.0]
 
 [node name="Base" type="TileMapLayer" parent="."]
 z_index = 1
@@ -2352,7 +2352,7 @@ position = Vector2(12051, -42)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(7254, -215)
+position = Vector2(6997, -239)
 scale = Vector2(7.25584, 5.49071)
 texture = ExtResource("10_wi0yl")
 
