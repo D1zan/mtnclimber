@@ -2352,7 +2352,11 @@ position = Vector2(12051, -42)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+<<<<<<< HEAD
+position = Vector2(6852, -260)
+=======
 position = Vector2(7254, -215)
+>>>>>>> 921dcc04c1fc63d060b3e86cce8da8719b0a0c23
 scale = Vector2(7.25584, 5.49071)
 texture = ExtResource("10_wi0yl")
 

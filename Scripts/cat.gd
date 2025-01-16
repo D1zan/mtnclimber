@@ -90,6 +90,10 @@ func _on_death_area_3_body_entered(body: Node2D) -> void:
 func _on_killing_zone_body_entered(body: Node2D) -> void:
 	killPlayer()
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 16bb6d1220c73f25f5b419bc87ea8b89e50cfac3
 func _on_next_level_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 	
