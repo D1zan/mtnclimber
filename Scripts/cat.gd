@@ -1,14 +1,15 @@
 extends CharacterBody2D
 
 
-const SPEED = 600.0
-const JUMP_VELOCITY = -600.0
+const SPEED = 650.0
+const JUMP_VELOCITY = -650.0
 var max_jump = 2
 var jump_count = 0
 const friction = 70
 const wall_jump_pushback = 100
 var double_jump
 @export var fighting = false
+
 
 func _ready():
 	double_jump = false
@@ -70,21 +71,22 @@ func walk():
 			$AnimatedSprite2D.play("cat_walk")
 		else:
 			$AnimatedSprite2D.play("cat_idle")
-	
+	GameManager.cat_position = position.x
+
 func killPlayer():
-	position = %respawn.position
-	$AnimatedSprite2D.flip_h = true
-func killPlayerS2():
-	position = %RespawnS2.position
+	position = get_tree().current_scene.respawn.position
 	$AnimatedSprite2D.flip_h = true
 
 func _on_death_area_body_entered(body: Node2D) -> void:
 	killPlayer()
+	
 
 func _on_death_area_2_body_entered(body: Node2D) -> void:
-	killPlayerS2()
-
-
+	killPlayer()
+	
+func _on_death_area_3_body_entered(body: Node2D) -> void:
+	killPlayer()
+	
 func _on_next_level_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 	
@@ -98,6 +100,11 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	print("x")
 	fighting = false
 
-
+func damage(amount):
+	GameManager.health -= amount
+	if GameManager.health == 0:
+		killPlayer()
+		GameManager.health = 100
+	print(GameManager.health)
 
 	

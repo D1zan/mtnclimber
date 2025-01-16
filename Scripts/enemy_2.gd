@@ -4,7 +4,7 @@ extends CharacterBody2D
 const SPEED = 300
 var movingRight = 1
 var canSwitch = true
-var player_in_contact = false
+
 
 func _physics_process(delta: float) -> void:
 	if movingRight < 0:
@@ -17,7 +17,7 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false
 	move_and_slide()
 	
-	something(player_in_contact)
+
 
 
 
@@ -25,26 +25,15 @@ func _physics_process(delta: float) -> void:
 
 func _on_bug_area_entered(area: Area2D) -> void:
 	movingRight *= -1
-	print(movingRight)
+	#print(movingRight)
 
 
 
 func _on_bug_body_entered(body: Node2D) -> void:
-	player_in_contact = body
-
-
-
-
-func _on_bug_body_exited(body: Node2D) -> void:
-	player_in_contact = false
-	
-	
-func something(body):
-	if player_in_contact:
-		if body.name == "Cat":
+	if body.name == "Cat":
 			if body.fighting:
 				print("fight Enemy")
 				GameManager.score += 1000
 				queue_free()
 			else:
-				body.killPlayerS2()
+				body.damage(10)

@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://dqx85eigpe63x"]
+
+[sub_resource type="Gradient" id="Gradient_dp4l6"]
+offsets = PackedFloat32Array(0, 0.233333, 0.4, 0.586667, 0.78, 0.9, 1)
+colors = PackedColorArray(0.828968, 0, 0.00248836, 1, 0.87154, 0.245472, 0, 1, 0.866575, 0.317131, 0, 1, 0.751419, 0.35085, 0, 1, 0.743448, 0.331754, 0.0293512, 1, 0.732323, 0.445804, 7.70092e-07, 1, 0.962573, 0.556623, 0, 1)
+
+[node name="Fire" type="Node2D"]
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+amount = 1000
+emission_shape = 1
+emission_sphere_radius = 30.0
+gravity = Vector2(0, -200)
+scale_amount_max = 3.0
+color_ramp = SubResource("Gradient_dp4l6")
