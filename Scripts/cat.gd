@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 
 const SPEED = 650.0
-const JUMP_VELOCITY = -610.0
+const JUMP_VELOCITY = -650.0
 var max_jump = 2
 var jump_count = 0
 const friction = 70
