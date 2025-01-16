@@ -67,6 +67,10 @@ Fight={
 ]
 }
 
+[physics]
+
+2d/default_gravity=1400.0
+
 [rendering]
 
 environment/defaults/default_clear_color=Color(0.258154, 0.300378, 0.387078, 1)

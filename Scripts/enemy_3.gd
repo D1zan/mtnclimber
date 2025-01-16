@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
+
 const SPEED = 300
 var movingRight = 1
 var canSwitch = true
-@onready var respawn = %respawn
 
 func _physics_process(delta: float) -> void:
 	if movingRight < 0:
@@ -16,21 +16,20 @@ func _physics_process(delta: float) -> void:
 		$AnimatedSprite2D.flip_h = false
 	move_and_slide()
 	
-	#something(player_in_contact)
+	
 
 
 
 
 
-
-func _on_bug_death_area_entered(area: Area2D) -> void:
+func _on_bug_body_2_area_entered(area: Area2D) -> void:
 	movingRight *= -1
 	#print(movingRight)
 
 
 
-func _on_die_bug_body_entered(body: Node2D) -> void:
-		if body.name == "Cat":
+func _on_bug_body_2_body_entered(body: Node2D) -> void:
+	if body.name == "Cat":
 			if body.fighting:
 				print("fight Enemy")
 				GameManager.score += 1000
