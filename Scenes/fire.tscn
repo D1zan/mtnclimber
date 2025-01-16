@@ -7,6 +7,7 @@ colors = PackedColorArray(0.828968, 0, 0.00248836, 1, 0.87154, 0.245472, 0, 1, 0
 [node name="Fire" type="Node2D"]
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+z_index = -1
 amount = 1000
 emission_shape = 1
 emission_sphere_radius = 30.0
