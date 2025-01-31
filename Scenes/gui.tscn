@@ -1,6 +1,7 @@
-[gd_scene load_steps=8 format=3 uid="uid://biu744c1amotx"]
+[gd_scene load_steps=9 format=3 uid="uid://biu744c1amotx"]
 
 [ext_resource type="Texture2D" uid="uid://xq4xeoq1ljos" path="res://Assests/Other Assests/Coin-removebg-preview.png" id="1_gaxo1"]
+[ext_resource type="Script" path="res://Scripts/gui.gd" id="1_xvnfe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_qnuns"]
 atlas = ExtResource("1_gaxo1")
@@ -46,6 +47,7 @@ animations = [{
 }]
 
 [node name="GUI" type="CanvasLayer"]
+script = ExtResource("1_xvnfe")
 
 [node name="CoinValue" type="Label" parent="."]
 offset_left = 1011.0
@@ -78,18 +80,25 @@ theme_override_font_sizes/font_size = 30
 text = "100"
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(1132, 23)
-scale = Vector2(0.478693, 0.419034)
+position = Vector2(1133.44, 23.0625)
+scale = Vector2(0.495029, 0.419744)
 sprite_frames = SubResource("SpriteFrames_nqqr2")
 autoplay = "default"
 frame_progress = 0.518359
 
 [node name="Heart" type="Label" parent="."]
-offset_left = 52.0
-offset_top = 10.0
-offset_right = 93.0
-offset_bottom = 52.0
+offset_left = 56.0
+offset_top = 11.0
+offset_right = 97.0
+offset_bottom = 53.0
+size_flags_horizontal = 8
 theme_override_colors/font_shadow_color = Color(0.45098, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 30
 text = "❤️"
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
