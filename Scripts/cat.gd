@@ -17,7 +17,7 @@ func _ready():
 	double_jump = false
 	
 func _physics_process(delta: float) -> void:
-	print($AnimatedSprite2D.animation)
+	#rint($AnimatedSprite2D.animation)
 	if double_jump:
 		if get_child(2).time_left == 0:
 			print("done")
@@ -77,23 +77,22 @@ func walk():
 func killPlayer():
 	die = true
 	$AnimatedSprite2D.play("cat_death")
-
-#func _on_death_area_body_entered(body: Node2D) -> void:
+func _on_death_area_body_entered(body: Node2D) -> void:
 	killPlayer()
 	
 
-#func _on_death_area_2_body_entered(body: Node2D) -> void:
+func _on_death_area_2_body_entered(body: Node2D) -> void:
 	killPlayer()
 	
-#3func _on_death_area_3_body_entered(body: Node2D) -> void:
+func _on_death_area_3_body_entered(body: Node2D) -> void:
 	killPlayer()
 	
-#func _on_killing_zone_body_entered(body: Node2D) -> void:
+func _on_killing_zone_body_entered(body: Node2D) -> void:
 	killPlayer()
 
 
-#func _on_next_level_area_entered(area: Area2D) -> void:
 func _on_next_level_area_entered(area: Area2D) -> void:
+
 	get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 	
 func fight():
