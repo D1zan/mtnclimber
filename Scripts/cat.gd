@@ -29,9 +29,7 @@ func _physics_process(delta: float) -> void:
 		jump_count=0
 		
 	# Handle jump.
-	jump()
-	
-	fight()
+	jump()         
 	# Get the input direction and handle the movement/deceleration.
 	walk()
 	
@@ -77,24 +75,21 @@ func killPlayer():
 	position = get_tree().current_scene.respawn.position
 	$AnimatedSprite2D.flip_h = true
 
-func _on_death_area_body_entered(body: Node2D) -> void:
+#func _on_death_area_body_entered(body: Node2D) -> void:
 	killPlayer()
 	
 
-func _on_death_area_2_body_entered(body: Node2D) -> void:
+#func _on_death_area_2_body_entered(body: Node2D) -> void:
 	killPlayer()
 	
-func _on_death_area_3_body_entered(body: Node2D) -> void:
+#3func _on_death_area_3_body_entered(body: Node2D) -> void:
 	killPlayer()
 	
-func _on_killing_zone_body_entered(body: Node2D) -> void:
+#func _on_killing_zone_body_entered(body: Node2D) -> void:
 	killPlayer()
 
-<<<<<<< HEAD
-=======
 
->>>>>>> 16bb6d1220c73f25f5b419bc87ea8b89e50cfac3
-func _on_next_level_area_entered(area: Area2D) -> void:
+#func _on_next_level_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 	
 func fight():
