@@ -1,5 +1,6 @@
 [gd_scene load_steps=36 format=4 uid="uid://dup2xnogohkxx"]
 
+[ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_pkx0m"]
 [ext_resource type="Texture2D" uid="uid://bmgaxvaern83r" path="res://Assests/Base/Base_-removebg-preview.png" id="1_vug5q"]
 [ext_resource type="Texture2D" uid="uid://dgk5reviouxth" path="res://Assests/Other Assests/Trees__1_-removebg-preview.png" id="2_8hjwf"]
 [ext_resource type="Texture2D" uid="uid://bmrqbos4q03r" path="res://Assests/Other Assests/Trees__2_-removebg-preview.png" id="3_b2vk4"]
@@ -13,14 +14,6 @@
 [ext_resource type="PackedScene" uid="uid://bbv8c1b7643bf" path="res://Scenes/enemy_2.tscn" id="11_8t3l8"]
 [ext_resource type="Texture2D" uid="uid://cv3wkte844axl" path="res://Assests/Other Assests/new_cave__1_-removebg-preview.png" id="12_qpu2g"]
 [ext_resource type="PackedScene" uid="uid://c4ln1sbdkwvq3" path="res://Scenes/level_2_snow.tscn" id="13_kpmf7"]
-
-[sub_resource type="GDScript" id="GDScript_pa2rr"]
-script/source = "extends Node2D
-
-
-@export var level_number = 1
-@onready var respawn = %RespawnS2
-"
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbdna"]
 texture = ExtResource("1_vug5q")
@@ -1619,7 +1612,7 @@ texture = ExtResource("12_qpu2g")
 sources/1 = SubResource("TileSetAtlasSource_urblb")
 
 [node name="level_2" type="Node2D"]
-script = SubResource("GDScript_pa2rr")
+script = ExtResource("1_pkx0m")
 metadata/_edit_vertical_guides_ = [4407.0, 9455.0, 0.0, 9456.0, 13155.0]
 metadata/_edit_horizontal_guides_ = [116.0]
 

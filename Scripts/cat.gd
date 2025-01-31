@@ -9,12 +9,15 @@ const friction = 70
 const wall_jump_pushback = 100
 var double_jump
 @export var fighting = false
+var take_damage = false
+var die = false
 
 
 func _ready():
 	double_jump = false
 	
 func _physics_process(delta: float) -> void:
+	print($AnimatedSprite2D.animation)
 	if double_jump:
 		if get_child(2).time_left == 0:
 			print("done")
@@ -64,7 +67,7 @@ func walk():
 	if velocity.x > 0:
 		$AnimatedSprite2D.flip_h = true
 	
-	if not fighting:
+	if not fighting and not take_damage and not die:
 		if velocity.x != 0:
 			$AnimatedSprite2D.play("cat_walk")
 		else:
@@ -72,8 +75,8 @@ func walk():
 	GameManager.cat_position = position.x
 
 func killPlayer():
-	position = get_tree().current_scene.respawn.position
-	$AnimatedSprite2D.flip_h = true
+	die = true
+	$AnimatedSprite2D.play("cat_death")
 
 #func _on_death_area_body_entered(body: Node2D) -> void:
 	killPlayer()
@@ -90,6 +93,7 @@ func killPlayer():
 
 
 #func _on_next_level_area_entered(area: Area2D) -> void:
+func _on_next_level_area_entered(area: Area2D) -> void:
 	get_tree().change_scene_to_file("res://Scenes/second_level.tscn")
 	
 func fight():
@@ -100,13 +104,22 @@ func fight():
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	print("x")
+	if die:
+		position = get_tree().current_scene.respawn.position
+		GameManager.health = 100
+		$AnimatedSprite2D.flip_h = true
 	fighting = false
-
+	take_damage = false
+	die = false
+	
+	
 func damage(amount):
 	GameManager.health -= amount
 	if GameManager.health == 0:
 		killPlayer()
-		GameManager.health = 100
+	elif GameManager.health > 0:
+		take_damage = true
+		$AnimatedSprite2D.play("cat_damage")
 	print(GameManager.health)
 
 	
