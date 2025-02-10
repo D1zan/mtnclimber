@@ -39,7 +39,8 @@ func _physics_process(delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	
 	move_and_slide()
-	
+
+#code to make the player jump 	
 func jump():
 	if double_jump == true:
 		if Input.is_action_just_pressed("Jump") and jump_count < max_jump:
@@ -55,6 +56,7 @@ func double_jump_power():
 	get_child(2).one_shot = true
 	get_child(2).start(30)
 
+#Makes the player walk
 func walk():
 	var direction := Input.get_axis("Left", "Right")
 	if direction:
@@ -74,6 +76,7 @@ func walk():
 			$AnimatedSprite2D.play("cat_idle")
 	GameManager.cat_position = position.x
 
+#Kills the player and respons them
 func killPlayer():
 	die = true
 	$AnimatedSprite2D.play("cat_death")

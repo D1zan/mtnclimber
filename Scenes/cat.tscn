@@ -309,6 +309,7 @@ flip_h = true
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(22, -125)
 limit_left = 0
+limit_top = -731
 limit_bottom = 116
 
 [node name="Node2D" type="Node2D" parent="."]
