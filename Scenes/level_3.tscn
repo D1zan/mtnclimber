@@ -1247,7 +1247,7 @@ tile_set = SubResource("TileSet_3nbyu")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(5404, 1070)
+position = Vector2(4488, -559)
 scale = Vector2(5.57636, 2.26619)
 texture = ExtResource("6_u2y7y")
 
