@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=4 uid="uid://dup2xnogohkxx"]
+[gd_scene load_steps=37 format=4 uid="uid://dup2xnogohkxx"]
 
 [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_pkx0m"]
 [ext_resource type="Texture2D" uid="uid://bmgaxvaern83r" path="res://Assests/Base/Base_-removebg-preview.png" id="1_vug5q"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://bbv8c1b7643bf" path="res://Scenes/enemy_2.tscn" id="11_8t3l8"]
 [ext_resource type="Texture2D" uid="uid://cv3wkte844axl" path="res://Assests/Other Assests/new_cave__1_-removebg-preview.png" id="12_qpu2g"]
 [ext_resource type="PackedScene" uid="uid://c4ln1sbdkwvq3" path="res://Scenes/level_2_snow.tscn" id="13_kpmf7"]
+[ext_resource type="PackedScene" uid="uid://ctn85bkeb68al" path="res://Scenes/pause_menu.tscn" id="15_l35ff"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbdna"]
 texture = ExtResource("1_vug5q")
@@ -2292,6 +2293,10 @@ tile_set = SubResource("TileSet_bbbe2")
 
 [node name="LEVEL2_SNOW" parent="." instance=ExtResource("13_kpmf7")]
 position = Vector2(5219, -491)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("15_l35ff")]
 
 [connection signal="body_entered" from="deathArea2" to="Cat" method="_on_death_area_2_body_entered"]
 [connection signal="body_entered" from="Next_level_2" to="Next_level_2" method="_on_body_entered"]

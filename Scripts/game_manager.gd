@@ -1,8 +1,8 @@
 extends Node
 
 
-var coins = 0
-var score = 0
+@export var coins = 0
+@export var score = 0
 var cat_position = 0
 var health = 100
 
