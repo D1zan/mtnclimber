@@ -1,4 +1,4 @@
-[gd_scene load_steps=46 format=3 uid="uid://eok7e2xeeon4"]
+[gd_scene load_steps=44 format=3 uid="uid://eok7e2xeeon4"]
 
 [ext_resource type="Script" path="res://Scripts/cat.gd" id="1_06t6j"]
 [ext_resource type="Texture2D" uid="uid://s1uxl2yurngt" path="res://Assests/Cat Sprite/Cat_sprite__3_-removebg-preview.png" id="1_8dye0"]
@@ -6,7 +6,6 @@
 [ext_resource type="Texture2D" uid="uid://cdrwu14otxxhl" path="res://Assests/Cat Sprite/cat_Fight-removebg-preview.png" id="2_dngls"]
 [ext_resource type="Texture2D" uid="uid://m5qr44tpahpq" path="res://Assests/Cat Sprite/Untitled_01-28-2025_11-08-07__3___1_-removebg-preview.png" id="2_eqktc"]
 [ext_resource type="Texture2D" uid="uid://c7mswsblsdan" path="res://Assests/Cat Sprite/cat_death_resized.png" id="3_hff0e"]
-[ext_resource type="Texture2D" uid="uid://0pq3j4mqhh" path="res://Assests/Other Assests/Untitled_01-28-2025_10-36-34__1_-removebg-preview.png" id="7_ykx27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_82vep"]
 size = Vector2(111, 81)
@@ -284,9 +283,6 @@ animations = [{
 "speed": 8.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_w6ys5"]
-size = Vector2(136, 133)
-
 [node name="Cat" type="CharacterBody2D" groups=["Cat", "cat"]]
 collision_layer = 15
 collision_mask = 15
@@ -311,17 +307,5 @@ position = Vector2(22, -125)
 limit_left = 0
 limit_top = -731
 limit_bottom = 116
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Node2D"]
-position = Vector2(363, 316)
-shape = SubResource("RectangleShape2D_w6ys5")
-
-[node name="Sprite2D" type="Sprite2D" parent="Node2D"]
-
-[node name="Untitled01-28-202510-36-341-removebg-preview" type="Sprite2D" parent="Node2D"]
-position = Vector2(364, 252)
-texture = ExtResource("7_ykx27")
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
