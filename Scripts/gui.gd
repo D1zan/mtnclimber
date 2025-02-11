@@ -7,10 +7,10 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(_delta: float) -> void:
-	$CoinValue.position.x = get_viewport().size.x-150
-	$ScoreValue.position.x = get_viewport().size.x-150
-	$AnimatedSprite2D.position.x = get_viewport().size.x-20
+#func _process(_delta: float) -> void:
+#	$CoinValue.position.x = get_viewport().size.x-150
+#	$ScoreValue.position.x = get_viewport().size.x-150
+#	$AnimatedSprite2D.position.x = get_viewport().size.x-20
 	
 	
 	

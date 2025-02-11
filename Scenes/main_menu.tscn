@@ -1,7 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://be0xtd75q6ttb"]
+[gd_scene load_steps=2 format=3 uid="uid://be0xtd75q6ttb"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8enih"]
-[ext_resource type="Texture2D" uid="uid://cywq1875tm8v3" path="res://Assests/Base/images (1).jpg" id="2_mqjnq"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -64,15 +63,6 @@ offset_right = 35.0
 offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(570, 380)
-scale = Vector2(4.08897, 3.58101)
-texture = ExtResource("2_mqjnq")
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
