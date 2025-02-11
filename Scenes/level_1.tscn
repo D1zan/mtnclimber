@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=4 uid="uid://c0pmynl67uxqm"]
+[gd_scene load_steps=35 format=4 uid="uid://c0pmynl67uxqm"]
 
 [ext_resource type="Texture2D" uid="uid://h46dk04168xk" path="res://Assests/Base/Base_.JP2-removebg-preview.png" id="1_qilva"]
 [ext_resource type="Script" path="res://Scripts/level_1.gd" id="1_qx3fk"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://b4k0ui0nhrcmy" path="res://Assests/Base/Base-1 (2)-1.png" id="10_wi0yl"]
 [ext_resource type="Texture2D" uid="uid://bkjy6pk0p55on" path="res://Assests/Base/Jumpint_Base__2_-removebg-preview.png" id="11_61dm1"]
 [ext_resource type="Texture2D" uid="uid://ci3g64q07rypq" path="res://Assests/Other Assests/new cave.png" id="12_nnyj7"]
+[ext_resource type="PackedScene" uid="uid://ctn85bkeb68al" path="res://Scenes/pause_menu.tscn" id="14_mlvgk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pj7e4"]
 texture = ExtResource("1_qilva")
@@ -2168,6 +2169,7 @@ length = 171.0
 [node name="level_1" type="Node2D"]
 script = ExtResource("1_qx3fk")
 metadata/_edit_vertical_guides_ = [13152.0, 13151.0, 13151.0, 13153.0]
+metadata/_edit_horizontal_guides_ = [-731.0]
 
 [node name="Base" type="TileMapLayer" parent="."]
 z_index = 1
@@ -2535,6 +2537,10 @@ collision_mask = 5
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Stay Between/Stop2"]
 position = Vector2(31, -32)
 shape = SubResource("SeparationRayShape2D_8t3u4")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("14_mlvgk")]
 
 [connection signal="body_entered" from="deathArea" to="Cat" method="_on_death_area_body_entered"]
 [connection signal="body_entered" from="NextLevel" to="NextLevel" method="_on_body_entered"]

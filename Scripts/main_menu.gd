@@ -3,6 +3,10 @@ extends Control
 
 # Called when the node enters the scene tree for the first time.
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> a906df85427f484b1eb509176edb3649d6624de3
 #func _process(delta: float) -> void:
 
 #

@@ -1,0 +1,87 @@
+[gd_scene load_steps=4 format=3 uid="uid://ctn85bkeb68al"]
+
+[ext_resource type="Script" path="res://Scripts/pause_menu.gd" id="1_31d7a"]
+
+[sub_resource type="Shader" id="Shader_h7io8"]
+code = "shader_type canvas_item;
+
+void vertex() {
+	// Called for every vertex the material is visible on.
+}
+
+void fragment() {
+	// Called for every pixel the material is visible on.
+}
+
+//void light() {
+	// Called for every pixel for every light affecting the CanvasItem.
+	// Uncomment to replace the default light processing function with this one.
+//}
+"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_wfsjl"]
+shader = SubResource("Shader_h7io8")
+
+[node name="Pause_Menu" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_top = 6.0
+offset_right = 3.0
+offset_bottom = 6.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_31d7a")
+
+[node name="Resume" type="Button" parent="."]
+top_level = true
+layout_mode = 2
+anchor_left = 0.361111
+anchor_top = 0.345679
+anchor_right = 0.559896
+anchor_bottom = 0.490741
+text = "Resume"
+metadata/_edit_use_anchors_ = true
+
+[node name="Main Menu" type="Button" parent="."]
+top_level = true
+layout_mode = 2
+anchor_left = 0.365451
+anchor_top = 0.103395
+anchor_right = 0.565104
+anchor_bottom = 0.25
+grow_horizontal = 2
+grow_vertical = 2
+text = "Main Menu"
+metadata/_edit_use_anchors_ = true
+
+[node name="Quit" type="Button" parent="."]
+top_level = true
+layout_mode = 2
+anchor_left = 0.358507
+anchor_top = 0.555556
+anchor_right = 0.559028
+anchor_bottom = 0.70216
+offset_top = -3.05176e-05
+text = "Quit"
+metadata/_edit_use_anchors_ = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_wfsjl")
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -0.00260417
+anchor_top = -0.00462963
+anchor_right = 0.997396
+anchor_bottom = 1.00309
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.270222, 0.270222, 0.270222, 0.509804)
+metadata/_edit_use_anchors_ = true
+
+[connection signal="pressed" from="Resume" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="Main Menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="Quit" to="." method="_on_quit_pressed"]

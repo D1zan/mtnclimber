@@ -14,6 +14,10 @@
 [ext_resource type="PackedScene" uid="uid://bbv8c1b7643bf" path="res://Scenes/enemy_2.tscn" id="11_8t3l8"]
 [ext_resource type="Texture2D" uid="uid://cv3wkte844axl" path="res://Assests/Other Assests/new_cave__1_-removebg-preview.png" id="12_qpu2g"]
 [ext_resource type="PackedScene" uid="uid://c4ln1sbdkwvq3" path="res://Scenes/level_2_snow.tscn" id="13_kpmf7"]
+<<<<<<< HEAD
+=======
+[ext_resource type="PackedScene" uid="uid://ctn85bkeb68al" path="res://Scenes/pause_menu.tscn" id="15_l35ff"]
+>>>>>>> a906df85427f484b1eb509176edb3649d6624de3
 [ext_resource type="Texture2D" uid="uid://b3hl5detfpvw8" path="res://Scripts/chest closed.png" id="15_y6a7g"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbdna"]
@@ -2297,6 +2301,13 @@ tile_set = SubResource("TileSet_bbbe2")
 [node name="LEVEL2_SNOW" parent="." instance=ExtResource("13_kpmf7")]
 position = Vector2(5219, -491)
 
+<<<<<<< HEAD
+=======
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Pause_Menu" parent="CanvasLayer" instance=ExtResource("15_l35ff")]
+
+>>>>>>> a906df85427f484b1eb509176edb3649d6624de3
 [node name="ChestClosed" type="Sprite2D" parent="."]
 position = Vector2(1064, -39)
 scale = Vector2(0.806931, 0.663743)
