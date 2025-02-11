@@ -1,0 +1,361 @@
+From 7c47da6a31858f4795b73dac30161bad094af708 Mon Sep 17 00:00:00 2001
+From: D1zan <student.189241@worcesterschools.net>
+Date: Tue, 11 Feb 2025 10:27:45 -0500
+Subject: [PATCH] temp
+
+---
+ Scenes/level_2.tscn             |  16 ++++++++++++++-
+ Scenes/main_menu.tscn           |  12 +----------
+ Scripts/chest closed.png        | Bin 0 -> 6861 bytes
+ Scripts/chest closed.png.import |  34 ++++++++++++++++++++++++++++++++
+ Scripts/go_back_2.gd            |  15 --------------
+ Scripts/go_back_l_1.gd          |  15 --------------
+ Scripts/gui.gd                  |   8 ++++----
+ Scripts/main_menu.gd            |  12 ++++-------
+ 8 files changed, 58 insertions(+), 54 deletions(-)
+ create mode 100644 Scripts/chest closed.png
+ create mode 100644 Scripts/chest closed.png.import
+ delete mode 100644 Scripts/go_back_2.gd
+ delete mode 100644 Scripts/go_back_l_1.gd
+
+diff --git a/Scenes/level_2.tscn b/Scenes/level_2.tscn
+index d382773..d58d312 100644
+--- a/Scenes/level_2.tscn
++++ b/Scenes/level_2.tscn
+@@ -1,4 +1,4 @@
+-[gd_scene load_steps=36 format=4 uid="uid://dup2xnogohkxx"]
++[gd_scene load_steps=38 format=4 uid="uid://dup2xnogohkxx"]
+ 
+ [ext_resource type="Script" path="res://Scripts/level_2.gd" id="1_pkx0m"]
+ [ext_resource type="Texture2D" uid="uid://bmgaxvaern83r" path="res://Assests/Base/Base_-removebg-preview.png" id="1_vug5q"]
+@@ -14,6 +14,7 @@
+ [ext_resource type="PackedScene" uid="uid://bbv8c1b7643bf" path="res://Scenes/enemy_2.tscn" id="11_8t3l8"]
+ [ext_resource type="Texture2D" uid="uid://cv3wkte844axl" path="res://Assests/Other Assests/new_cave__1_-removebg-preview.png" id="12_qpu2g"]
+ [ext_resource type="PackedScene" uid="uid://c4ln1sbdkwvq3" path="res://Scenes/level_2_snow.tscn" id="13_kpmf7"]
++[ext_resource type="Texture2D" uid="uid://b3hl5detfpvw8" path="res://Scripts/chest closed.png" id="15_y6a7g"]
+ 
+ [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nbdna"]
+ texture = ExtResource("1_vug5q")
+@@ -1611,6 +1612,9 @@ texture = ExtResource("12_qpu2g")
+ [sub_resource type="TileSet" id="TileSet_bbbe2"]
+ sources/1 = SubResource("TileSetAtlasSource_urblb")
+ 
++[sub_resource type="RectangleShape2D" id="RectangleShape2D_e3qhi"]
++size = Vector2(102.859, 123.542)
++
+ [node name="level_2" type="Node2D"]
+ script = ExtResource("1_pkx0m")
+ metadata/_edit_vertical_guides_ = [4407.0, 9455.0, 0.0, 9456.0, 13155.0]
+@@ -2293,5 +2297,15 @@ tile_set = SubResource("TileSet_bbbe2")
+ [node name="LEVEL2_SNOW" parent="." instance=ExtResource("13_kpmf7")]
+ position = Vector2(5219, -491)
+ 
++[node name="ChestClosed" type="Sprite2D" parent="."]
++position = Vector2(1064, -39)
++scale = Vector2(0.806931, 0.663743)
++texture = ExtResource("15_y6a7g")
++
++[node name="CollisionShape2D" type="CollisionShape2D" parent="ChestClosed"]
++position = Vector2(0.929443, 24.4824)
++shape = SubResource("RectangleShape2D_e3qhi")
++metadata/_edit_lock_ = true
++
+ [connection signal="body_entered" from="deathArea2" to="Cat" method="_on_death_area_2_body_entered"]
+ [connection signal="body_entered" from="Next_level_2" to="Next_level_2" method="_on_body_entered"]
+diff --git a/Scenes/main_menu.tscn b/Scenes/main_menu.tscn
+index 40bb2aa..f470d7a 100644
+--- a/Scenes/main_menu.tscn
++++ b/Scenes/main_menu.tscn
+@@ -1,7 +1,6 @@
+-[gd_scene load_steps=3 format=3 uid="uid://be0xtd75q6ttb"]
++[gd_scene load_steps=2 format=3 uid="uid://be0xtd75q6ttb"]
+ 
+ [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8enih"]
+-[ext_resource type="Texture2D" uid="uid://cywq1875tm8v3" path="res://Assests/Base/images (1).jpg" id="2_mqjnq"]
+ 
+ [node name="MainMenu" type="Control"]
+ layout_mode = 3
+@@ -65,15 +64,6 @@ offset_bottom = 51.0
+ grow_horizontal = 2
+ grow_vertical = 2
+ 
+-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+-
+-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+-
+-[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+-position = Vector2(570, 380)
+-scale = Vector2(4.08897, 3.58101)
+-texture = ExtResource("2_mqjnq")
+-
+ [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+ [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]
+ [connection signal="pressed" from="QuitButton" to="." method="_on_quit_button_pressed"]
+diff --git a/Scripts/chest closed.png b/Scripts/chest closed.png
+new file mode 100644
+index 0000000000000000000000000000000000000000..78b716bb5470020858a5fd7087142e01753b1b5b
+GIT binary patch
+literal 6861
+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
+
+literal 0
+HcmV?d00001
+
+diff --git a/Scripts/chest closed.png.import b/Scripts/chest closed.png.import
+new file mode 100644
+index 0000000..3f7fb02
+--- /dev/null
++++ b/Scripts/chest closed.png.import	
+@@ -0,0 +1,34 @@
++[remap]
++
++importer="texture"
++type="CompressedTexture2D"
++uid="uid://b3hl5detfpvw8"
++path="res://.godot/imported/chest closed.png-782f19c3e8db491a15350887d521ae3c.ctex"
++metadata={
++"vram_texture": false
++}
++
++[deps]
++
++source_file="res://Scripts/chest closed.png"
++dest_files=["res://.godot/imported/chest closed.png-782f19c3e8db491a15350887d521ae3c.ctex"]
++
++[params]
++
++compress/mode=0
++compress/high_quality=false
++compress/lossy_quality=0.7
++compress/hdr_compression=1
++compress/normal_map=0
++compress/channel_pack=0
++mipmaps/generate=false
++mipmaps/limit=-1
++roughness/mode=0
++roughness/src_normal=""
++process/fix_alpha_border=true
++process/premult_alpha=false
++process/normal_map_invert_y=false
++process/hdr_as_srgb=false
++process/hdr_clamp_exposure=false
++process/size_limit=0
++detect_3d/compress_to=1
+diff --git a/Scripts/go_back_2.gd b/Scripts/go_back_2.gd
+deleted file mode 100644
+index fc14b28..0000000
+--- a/Scripts/go_back_2.gd
++++ /dev/null
+@@ -1,15 +0,0 @@
+-extends Area2D
+-
+-
+-
+-
+-
+-func _on_body_entered(body: Node2D) -> void:
+-	print("hi")
+-	if body.is_in_group("cat"):
+-		var current_scene_file = get_tree().current_scene.scene_file_path
+-		var next_level_number = current_scene_file.to_int() - 1
+-		
+-		var next_level_path = "res://Scenes/level_" + str(next_level_number) + ".tscn"
+-		print(next_level_path)
+-		get_tree().change_scene_to_file(next_level_path)
+diff --git a/Scripts/go_back_l_1.gd b/Scripts/go_back_l_1.gd
+deleted file mode 100644
+index 8ec949a..0000000
+--- a/Scripts/go_back_l_1.gd
++++ /dev/null
+@@ -1,15 +0,0 @@
+-extends Area2D
+-
+-
+-
+-
+-func _on_body_entered(body: Node2D) -> void:
+-	print("hi")
+-	if body.is_in_group("cat"):
+-		var current_scene_file = get_tree().current_scene.scene_file_path
+-		var next_level_number = current_scene_file.to_int() - 1
+-		
+-		var next_level_path = "res://Scenes/level_" + str(next_level_number) + ".tscn"
+-		print(next_level_path)
+-		get_tree().change_scene_to_file(next_level_path)
+-		body.go_back_L_1()
+diff --git a/Scripts/gui.gd b/Scripts/gui.gd
+index e2e69c1..57b2d30 100644
+--- a/Scripts/gui.gd
++++ b/Scripts/gui.gd
+@@ -7,10 +7,10 @@ func _ready() -> void:
+ 
+ 
+ # Called every frame. 'delta' is the elapsed time since the previous frame.
+-func _process(_delta: float) -> void:
+-	$CoinValue.position.x = get_viewport().size.x-150
+-	$ScoreValue.position.x = get_viewport().size.x-150
+-	$AnimatedSprite2D.position.x = get_viewport().size.x-20
++#func _process(_delta: float) -> void:
++#	$CoinValue.position.x = get_viewport().size.x-150
++#	$ScoreValue.position.x = get_viewport().size.x-150
++#	$AnimatedSprite2D.position.x = get_viewport().size.x-20
+ 	
+ 	
+ 	
+diff --git a/Scripts/main_menu.gd b/Scripts/main_menu.gd
+index fc2916b..e96c369 100644
+--- a/Scripts/main_menu.gd
++++ b/Scripts/main_menu.gd
+@@ -2,19 +2,15 @@ extends Control
+ 
+ 
+ # Called when the node enters the scene tree for the first time.
+-func _ready() -> void:
+-	pass
++
+ #func _process(delta: float) -> void:
+-	$ParallaxBackground/ParallaxLayer/Sprite2D.scale=get_viewport().size/120
++
+ #
+ func _on_start_button_pressed() -> void:
+ 	get_tree().change_scene_to_file("res://Scenes/level_1.tscn")
+-
+-
++	
+ func _on_options_button_pressed() -> void:
+ 	pass # Replace with function body.
+-
+-
+-
+ func _on_quit_button_pressed() -> void:
++	
+ 	get_tree().quit()
+-- 
+2.43.0.windows.1
+
