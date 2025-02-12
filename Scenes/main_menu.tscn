@@ -1,18 +1,16 @@
-<<<<<<< HEAD
-[gd_scene load_steps=2 format=3 uid="uid://be0xtd75q6ttb"]
-=======
-[gd_scene load_steps=12 format=3 uid="uid://be0xtd75q6ttb"]
->>>>>>> a906df85427f484b1eb509176edb3649d6624de3
+[gd_scene load_steps=11 format=3 uid="uid://be0xtd75q6ttb"]
 
 [ext_resource type="Script" path="res://Scripts/main_menu.gd" id="1_8enih"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pvg40"]
+bg_color = Color(0.34902, 0.686275, 0, 0.596078)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ffipv"]
+bg_color = Color(0.34902, 0.686275, 0, 0.596078)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
@@ -26,36 +24,42 @@ corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5b2l1"]
+bg_color = Color(0.34902, 0.686275, 1, 0.521569)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m2ffu"]
+bg_color = Color(0.34902, 0.686275, 1, 0.521569)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0v1xy"]
+bg_color = Color(0.34902, 0.686275, 1, 1)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xphl3"]
+bg_color = Color(0.972549, 0, 0.160784, 0.501961)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_71t4m"]
+bg_color = Color(0.972549, 0, 0.160784, 0.501961)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
 corner_radius_bottom_left = 90
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5vi1b"]
+bg_color = Color(0.97177, 0, 0.162199, 1)
 corner_radius_top_left = 90
 corner_radius_top_right = 90
 corner_radius_bottom_right = 90
@@ -131,6 +135,8 @@ offset_right = 35.0
 offset_bottom = 51.0
 grow_horizontal = 2
 grow_vertical = 2
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
 
 [connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="OptionsButton" to="." method="_on_options_button_pressed"]

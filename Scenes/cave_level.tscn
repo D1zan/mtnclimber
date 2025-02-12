@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://bsa0xk316xabf"]
+[gd_scene load_steps=25 format=4 uid="uid://bsa0xk316xabf"]
 
 [ext_resource type="Texture2D" uid="uid://b6ftyq2xk2fal" path="res://Assests/Base/Cave.png" id="1_1kkow"]
 [ext_resource type="Script" path="res://Scripts/cave_level.gd" id="1_xiflk"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://0pq3j4mqhh" path="res://Assests/Other Assests/Untitled_01-28-2025_10-36-34__1_-removebg-preview.png" id="9_qrd36"]
 [ext_resource type="PackedScene" uid="uid://ctn85bkeb68al" path="res://Scenes/pause_menu.tscn" id="10_fyw8e"]
 [ext_resource type="Texture2D" uid="uid://cudhc5trwqvbr" path="res://Assests/Other Assests/Chest_upddate_optimized-removebg-preview.png" id="11_yxqns"]
+[ext_resource type="Texture2D" uid="uid://lkegpydgpk75" path="res://Assests/Other Assests/Untitled_02-10-2025_09-31-48__3_-removebg-preview.png" id="12_liuyk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_an4bu"]
 texture = ExtResource("3_getl6")
@@ -858,8 +859,23 @@ texture_region_size = Vector2i(15, 20)
 6:9/0 = 0
 7:9/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q5yqq"]
+texture = ExtResource("12_liuyk")
+1:0/0 = 0
+2:0/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_oo2pr"]
 sources/3 = SubResource("TileSetAtlasSource_bf7sd")
+sources/4 = SubResource("TileSetAtlasSource_q5yqq")
 
 [node name="cave_level" type="Node2D"]
 script = ExtResource("1_xiflk")
