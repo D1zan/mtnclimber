@@ -37,4 +37,4 @@ func _on_die_bug_body_entered(body: Node2D) -> void:
 				queue_free()
 			else:
 				body.damage(10)
-				position = (position - 10).position
+				
