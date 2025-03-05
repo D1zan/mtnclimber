@@ -1,2 +1,1 @@
-# mtnclimber
-the game of all games
+# Yamaneko Climber
