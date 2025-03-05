@@ -77,6 +77,7 @@ func walk():
 		else:
 			$AnimatedSprite2D.play("cat_idle")
 	GameManager.cat_position = position.x
+	
 
 #Kills the player and respons them
 func killPlayer():
