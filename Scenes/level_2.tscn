@@ -1939,8 +1939,8 @@ position = Vector2(9065.01, -43.992)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(4982, -1753)
-scale = Vector2(4.98176, 2.79496)
+position = Vector2(5058, -823)
+scale = Vector2(5.31615, 2.54496)
 texture = ExtResource("8_iuumw")
 
 [node name="Jumping platforms" type="TileMapLayer" parent="."]
