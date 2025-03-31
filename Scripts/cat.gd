@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 650.0
 const JUMP_VELOCITY = -650.0
+var is_bigger = false
 var max_jump = 2
 var jump_count = 0
 const friction = 70
@@ -11,6 +12,23 @@ var double_jump
 @export var fighting = false
 var take_damage = false
 var die = false
+
+func become_big():
+	is_bigger = true
+	self.scale = Vector2(1.5, 1.5)
+func become_small():
+	is_bigger = false
+	self.scale = Vector2(1,1)
+
+
+func _on_area_2d_body_entered(body):
+	if body.is_in_group("Player"):
+		body.become_big()
+		queue_free()
+
+
+
+
 
 
 func _ready():
