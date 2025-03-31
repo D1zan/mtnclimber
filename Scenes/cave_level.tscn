@@ -964,8 +964,13 @@ tile_set = SubResource("TileSet_ux2s0")
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Cave" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+<<<<<<< Updated upstream
 position = Vector2(6724, -519)
 scale = Vector2(19.1617, 6.09635)
+=======
+position = Vector2(6615, -264)
+scale = Vector2(17.8396, 5.49502)
+>>>>>>> Stashed changes
 texture = ExtResource("1_1kkow")
 
 [node name="Cat" parent="." instance=ExtResource("3_lr2c2")]
