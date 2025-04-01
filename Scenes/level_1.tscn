@@ -2185,7 +2185,7 @@ tile_map_data = PackedByteArray("AAAJAP//AAAAAAMAAAAKAP7/AAABAAIAAAAKAP//AAABAAM
 tile_set = SubResource("TileSet_qmv07")
 
 [node name="Cat" parent="." instance=ExtResource("6_k2edr")]
-position = Vector2(10368, -15)
+position = Vector2(138, -11)
 
 [node name="deathArea" type="Area2D" parent="."]
 
@@ -2327,7 +2327,7 @@ position = Vector2(7957, -38)
 position = Vector2(7794, -42)
 
 [node name="Coin17" parent="Coins" instance=ExtResource("9_rd5qm")]
-position = Vector2(10329, -43)
+position = Vector2(10470, -68)
 
 [node name="Coin18" parent="Coins" instance=ExtResource("9_rd5qm")]
 position = Vector2(10163, -37)
@@ -2355,7 +2355,7 @@ position = Vector2(12051, -42)
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-position = Vector2(7211, 2834)
+position = Vector2(7476, 8.00024)
 scale = Vector2(7.25584, 5.49071)
 texture = ExtResource("10_wi0yl")
 
